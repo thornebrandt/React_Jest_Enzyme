@@ -3,6 +3,8 @@ import sinon from 'sinon';
 import {shallow, mount, render} from 'enzyme';
 import TestUtils from 'react-addons-test-utils';
 import PhotoAlbum from '../photo-album';
+import fakePhotos from '../__data__/photos.fake.js';
+
 
 describe('<PhotoAlbum />', () => {
 	let photoAlbum,
@@ -11,30 +13,6 @@ describe('<PhotoAlbum />', () => {
 	fakeResponse,
 	sandbox,
 	chance;
-
-	let fakePhotos = [
-		{
-		    "albumId": 1,
-		    "id": 1,
-		    "title": "fakePhoto1",
-		    "url": "http://fakePhoto1",
-		    "thumbnailUrl": "http://fakePhotoThumbnail1"
-		},
-		{
-		    "albumId": 2,
-		    "id": 2,
-		    "title": "fakePhoto2",
-		    "url": "http://fakePhoto2",
-		    "thumbnailUrl": "http://fakePhotoThumbnail2"
-		},
-		{
-		    "albumId": 3,
-		    "id": 3,
-		    "title": "fakePhoto3",
-		    "url": "http://fakePhoto3",
-		    "thumbnailUrl": "http://fakePhotoThumbnail3"
-		}
-	];
 
 	const mockResponse = (status, statusText, response) => {
 	  return new window.Response(response, {
