@@ -12,7 +12,10 @@ describe('<PhotoAlbum />', () => {
 	fakePromiseResolve,
 	fakeResponse,
 	sandbox,
-	chance;
+	chancee,
+	numPhotos;
+	const rows = 3;
+	const cols = 3;
 
 	const mockResponse = (status, statusText, response) => {
 	  return new window.Response(response, {
@@ -25,7 +28,7 @@ describe('<PhotoAlbum />', () => {
 	};
 
 	const renderPhotoAlbum = function(){
-		const wrapper = shallow(<PhotoAlbum />);
+		const wrapper = shallow(<PhotoAlbum rows={rows} cols={cols}	 />);
 		photoAlbum = wrapper.instance();
 	}
 
@@ -63,7 +66,6 @@ describe('<PhotoAlbum />', () => {
 		fakeResponse = mockResponse(200, 'OK', JSON.stringify(fakePhotos));
 		fakePromise = setupPromise();
 		global.fetch = jest.fn().mockImplementation(() => fakePromise);
-		photoAlbum.setState = jest.fn();
 		photoAlbum.componentDidMount();
 	});
 
@@ -74,10 +76,11 @@ describe('<PhotoAlbum />', () => {
 	});
 
 
-	it("set state was called", (done) => {
+	it("state was populated with photos", (done) => {
+		numPhotos = cols * rows;
 		afterPromises(done, () => {
-			expect(photoAlbum.setState).toHaveBeenCalledTimes(1);
-			expect(photoAlbum.setState).toHaveBeenCalledWith({ "photos" : fakePhotos });
+			expect(photoAlbum.state.photos.length).toEqual(numPhotos);
+			expect(photoAlbum.state.photos).toEqual(fakePhotos);
 		});
 		fakePromiseResolve(fakeResponse);
 	});

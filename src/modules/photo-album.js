@@ -6,8 +6,12 @@ const Thumbnails = require('./thumbnails');
 class PhotoAlbum extends React.Component{
 	constructor(props){
 		super(props);
+		let total = props.rows * props.cols;
 		this.state = {
-			photos: []
+			photos: [],
+			rows: props.rows,
+			cols: props.cols,
+			total: total
 		}
 	}
 
@@ -16,7 +20,7 @@ class PhotoAlbum extends React.Component{
 	}
 
 	parsePhotos(data){
-		this.setState({ photos: data.slice(0, 24) });
+		this.setState({ photos: data.slice(0, this.state.total) });
 	}
 
 	loadData(){
