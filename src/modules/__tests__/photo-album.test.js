@@ -1,6 +1,6 @@
 import React from 'react';
-import sinon from 'sinon';
-import {shallow, mount, render} from 'enzyme';
+import {shallow} from 'enzyme';
+import renderer from 'react-test-renderer';
 import TestUtils from 'react-addons-test-utils';
 import PhotoAlbum from '../photo-album';
 import fakePhotos from '../__data__/photos.fake.js';
@@ -84,6 +84,14 @@ describe('<PhotoAlbum />', () => {
 		});
 		fakePromiseResolve(fakeResponse);
 	});
+
+	it('matches snapshot', () => {
+		const tree = renderer.create(
+			<PhotoAlbum rows={rows} cols={cols}	/>
+		);
+		expect(tree).toMatchSnapshot();
+	});
+
 
 });
 

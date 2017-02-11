@@ -1,0 +1,8 @@
+exports[`<PhotoAlbum /> matches snapshot 1`] = `
+<div>
+  <h1>
+    Photo Album
+  </h1>
+  <div />
+</div>
+`;

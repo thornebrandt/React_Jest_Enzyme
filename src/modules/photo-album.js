@@ -41,7 +41,12 @@ class PhotoAlbum extends React.Component{
 		return (
 			<div>
 				<h1>Photo Album</h1>
-				<Thumbnails photos={this.state.photos} />
+				<Thumbnails
+					photos={this.state.photos}
+					rows={this.state.rows}
+					cols={this.state.cols}
+					total={this.state.total}
+				/>
 			</div>
 		);
 	}
