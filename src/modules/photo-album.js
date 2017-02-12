@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
-const React = require('react');
-const ReactDOM = require('react-dom');
-const Thumbnails = require('./thumbnails');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Thumbnails from './thumbnails';
 
 class PhotoAlbum extends React.Component{
 	constructor(props){

@@ -8,7 +8,7 @@
     "start": "./node_modules/.bin/webpack-dev-server",
     "babel-watch": "babel --presets react src --watch --out-dir static",
     "watch": "webpack --watch",
-    "test": "jest --watch",
+    "test": "jest --watch --bail",
     "test-coverage": "jest --coverage",
     "reset-test": "jest -u"
   },

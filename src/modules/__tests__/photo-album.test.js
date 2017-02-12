@@ -1,7 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import renderer from 'react-test-renderer';
-import TestUtils from 'react-addons-test-utils';
 import PhotoAlbum from '../photo-album';
 import fakePhotos from '../__data__/photos.fake.js';
 
@@ -9,6 +8,7 @@ import fakePhotos from '../__data__/photos.fake.js';
 describe('<PhotoAlbum />', () => {
 	let photoAlbum,
 	fakePromise,
+	wrapper,
 	fakePromiseResolve,
 	fakeResponse,
 	sandbox,
@@ -28,7 +28,7 @@ describe('<PhotoAlbum />', () => {
 	};
 
 	const renderPhotoAlbum = function(){
-		const wrapper = shallow(<PhotoAlbum rows={rows} cols={cols}	 />);
+		wrapper = shallow(<PhotoAlbum rows={rows} cols={cols}	 />);
 		photoAlbum = wrapper.instance();
 	}
 
@@ -86,10 +86,7 @@ describe('<PhotoAlbum />', () => {
 	});
 
 	it('matches snapshot', () => {
-		const tree = renderer.create(
-			<PhotoAlbum rows={rows} cols={cols}	/>
-		);
-		expect(tree).toMatchSnapshot();
+		expect(wrapper).toMatchSnapshot();
 	});
 
 
