@@ -1,5 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
+import toJson from 'enzyme-to-json';
 import renderer from 'react-test-renderer';
 import PhotoAlbum from '../photo-album';
 import fakePhotos from '../__data__/photos.fake.js';
@@ -86,7 +87,7 @@ describe('<PhotoAlbum />', () => {
 	});
 
 	it('matches snapshot', () => {
-		expect(wrapper).toMatchSnapshot();
+		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
 

@@ -1,309 +1,70 @@
 exports[`<Thumbnails /> matches snapshot 1`] = `
-ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
-  "length": 1,
-  "node": <div>
-    <ThumbnailRow
-        cols={3}
-        rowIndex={0} />
-    <ThumbnailRow
-        cols={3}
-        rowIndex={1} />
-    <ThumbnailRow
-        cols={3}
-        rowIndex={2} />
-</div>,
-  "nodes": Array [
-    <div>
-      <ThumbnailRow
-            cols={3}
-            rowIndex={0} />
-      <ThumbnailRow
-            cols={3}
-            rowIndex={1} />
-      <ThumbnailRow
-            cols={3}
-            rowIndex={2} />
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance":  {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
-      "_context": Object {},
-      "_currentElement": <Thumbnails
-        cols={3}
-        photos={
-                Array [
-                        Object {
-                          "id": 0,
-                          "thumbnailUrl": "thumbnail0",
-                          "url": "fakePhoto0",
-                        },
-                        Object {
-                          "id": 1,
-                          "thumbnailUrl": "thumbnail1",
-                          "url": "fakePhoto1",
-                        },
-                        Object {
-                          "id": 2,
-                          "thumbnailUrl": "thumbnail2",
-                          "url": "fakePhoto2",
-                        },
-                        Object {
-                          "id": 3,
-                          "thumbnailUrl": "thumbnail3",
-                          "url": "fakePhoto3",
-                        },
-                        Object {
-                          "id": 4,
-                          "thumbnailUrl": "thumbnail4",
-                          "url": "fakePhoto4",
-                        },
-                        Object {
-                          "id": 5,
-                          "thumbnailUrl": "thumbnail5",
-                          "url": "fakePhoto5",
-                        },
-                        Object {
-                          "id": 6,
-                          "thumbnailUrl": "thumbnail6",
-                          "url": "fakePhoto6",
-                        },
-                        Object {
-                          "id": 7,
-                          "thumbnailUrl": "thumbnail7",
-                          "url": "fakePhoto7",
-                        },
-                        Object {
-                          "id": 8,
-                          "thumbnailUrl": "thumbnail8",
-                          "url": "fakePhoto8",
-                        },
-                      ]
-        }
-        rows={3}
-        total={9} />,
-      "_debugID": 7,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": Thumbnails {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "cols": 3,
-          "photos": Array [
-            Object {
-              "id": 0,
-              "thumbnailUrl": "thumbnail0",
-              "url": "fakePhoto0",
-            },
-            Object {
-              "id": 1,
-              "thumbnailUrl": "thumbnail1",
-              "url": "fakePhoto1",
-            },
-            Object {
-              "id": 2,
-              "thumbnailUrl": "thumbnail2",
-              "url": "fakePhoto2",
-            },
-            Object {
-              "id": 3,
-              "thumbnailUrl": "thumbnail3",
-              "url": "fakePhoto3",
-            },
-            Object {
-              "id": 4,
-              "thumbnailUrl": "thumbnail4",
-              "url": "fakePhoto4",
-            },
-            Object {
-              "id": 5,
-              "thumbnailUrl": "thumbnail5",
-              "url": "fakePhoto5",
-            },
-            Object {
-              "id": 6,
-              "thumbnailUrl": "thumbnail6",
-              "url": "fakePhoto6",
-            },
-            Object {
-              "id": 7,
-              "thumbnailUrl": "thumbnail7",
-              "url": "fakePhoto7",
-            },
-            Object {
-              "id": 8,
-              "thumbnailUrl": "thumbnail8",
-              "url": "fakePhoto8",
-            },
-          ],
-          "rows": 3,
-          "total": 9,
-        },
-        "refs": Object {},
-        "state": Object {
-          "cols": 3,
-          "photos": Array [
-            Object {
-              "id": 0,
-              "thumbnailUrl": "thumbnail0",
-              "url": "fakePhoto0",
-            },
-            Object {
-              "id": 1,
-              "thumbnailUrl": "thumbnail1",
-              "url": "fakePhoto1",
-            },
-            Object {
-              "id": 2,
-              "thumbnailUrl": "thumbnail2",
-              "url": "fakePhoto2",
-            },
-            Object {
-              "id": 3,
-              "thumbnailUrl": "thumbnail3",
-              "url": "fakePhoto3",
-            },
-            Object {
-              "id": 4,
-              "thumbnailUrl": "thumbnail4",
-              "url": "fakePhoto4",
-            },
-            Object {
-              "id": 5,
-              "thumbnailUrl": "thumbnail5",
-              "url": "fakePhoto5",
-            },
-            Object {
-              "id": 6,
-              "thumbnailUrl": "thumbnail6",
-              "url": "fakePhoto6",
-            },
-            Object {
-              "id": 7,
-              "thumbnailUrl": "thumbnail7",
-              "url": "fakePhoto7",
-            },
-            Object {
-              "id": 8,
-              "thumbnailUrl": "thumbnail8",
-              "url": "fakePhoto8",
-            },
-          ],
-          "rows": 3,
-          "total": 9,
-        },
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 4,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div>
-          <ThumbnailRow
-                    cols={3}
-                    rowIndex={0} />
-          <ThumbnailRow
-                    cols={3}
-                    rowIndex={1} />
-          <ThumbnailRow
-                    cols={3}
-                    rowIndex={2} />
-</div>,
-        "_debugID": 8,
-        "_renderedOutput": <div>
-          <ThumbnailRow
-                    cols={3}
-                    rowIndex={0} />
-          <ThumbnailRow
-                    cols={3}
-                    rowIndex={1} />
-          <ThumbnailRow
-                    cols={3}
-                    rowIndex={2} />
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <Thumbnails
+<div>
+  <ThumbnailRow
     cols={3}
     photos={
-        Array [
-            Object {
-              "id": 0,
-              "thumbnailUrl": "thumbnail0",
-              "url": "fakePhoto0",
-            },
-            Object {
-              "id": 1,
-              "thumbnailUrl": "thumbnail1",
-              "url": "fakePhoto1",
-            },
-            Object {
-              "id": 2,
-              "thumbnailUrl": "thumbnail2",
-              "url": "fakePhoto2",
-            },
-            Object {
-              "id": 3,
-              "thumbnailUrl": "thumbnail3",
-              "url": "fakePhoto3",
-            },
-            Object {
-              "id": 4,
-              "thumbnailUrl": "thumbnail4",
-              "url": "fakePhoto4",
-            },
-            Object {
-              "id": 5,
-              "thumbnailUrl": "thumbnail5",
-              "url": "fakePhoto5",
-            },
-            Object {
-              "id": 6,
-              "thumbnailUrl": "thumbnail6",
-              "url": "fakePhoto6",
-            },
-            Object {
-              "id": 7,
-              "thumbnailUrl": "thumbnail7",
-              "url": "fakePhoto7",
-            },
-            Object {
-              "id": 8,
-              "thumbnailUrl": "thumbnail8",
-              "url": "fakePhoto8",
-            },
-          ]
+      Array [
+        Object {
+          "id": 0,
+          "thumbnailUrl": "thumbnail0",
+          "url": "fakePhoto0",
+        },
+        Object {
+          "id": 1,
+          "thumbnailUrl": "thumbnail1",
+          "url": "fakePhoto1",
+        },
+        Object {
+          "id": 2,
+          "thumbnailUrl": "thumbnail2",
+          "url": "fakePhoto2",
+        },
+      ]
     }
-    rows={3}
-    total={9} />,
-}
+    rowIndex={0} />
+  <ThumbnailRow
+    cols={3}
+    photos={
+      Array [
+        Object {
+          "id": 3,
+          "thumbnailUrl": "thumbnail3",
+          "url": "fakePhoto3",
+        },
+        Object {
+          "id": 4,
+          "thumbnailUrl": "thumbnail4",
+          "url": "fakePhoto4",
+        },
+        Object {
+          "id": 5,
+          "thumbnailUrl": "thumbnail5",
+          "url": "fakePhoto5",
+        },
+      ]
+    }
+    rowIndex={1} />
+  <ThumbnailRow
+    cols={3}
+    photos={
+      Array [
+        Object {
+          "id": 6,
+          "thumbnailUrl": "thumbnail6",
+          "url": "fakePhoto6",
+        },
+        Object {
+          "id": 7,
+          "thumbnailUrl": "thumbnail7",
+          "url": "fakePhoto7",
+        },
+        Object {
+          "id": 8,
+          "thumbnailUrl": "thumbnail8",
+          "url": "fakePhoto8",
+        },
+      ]
+    }
+    rowIndex={2} />
+</div>
 `;

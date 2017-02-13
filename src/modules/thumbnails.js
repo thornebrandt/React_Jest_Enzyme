@@ -12,10 +12,21 @@ class Thumbnails extends React.Component{
 		};
 	}
 
+	getRowPhotos(i){
+		let rowIndex = i * this.state.rows;
+		let rowPhotos = this.state.photos.slice(rowIndex, rowIndex + this.state.rows);
+		return rowPhotos;
+	}
+
 	render(){
 		let rows = [];
 		for(let i = 0; i < this.state.rows; i++){
-			rows.push(<ThumbnailRow key={i} rowIndex={i} cols={this.state.cols} />);
+			rows.push(<ThumbnailRow
+				key={i}
+				rowIndex={i}
+				cols={this.state.cols}
+				photos={this.getRowPhotos(i)}
+			/>);
 		}
 		return (
 			<div>

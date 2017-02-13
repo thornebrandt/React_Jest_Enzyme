@@ -1,111 +1,12 @@
 exports[`<PhotoAlbum /> matches snapshot 1`] = `
-ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
-  "length": 1,
-  "node": <div>
-    <h1>
-        Photo Album
-    </h1>
-    <Thumbnails
-        cols={3}
-        photos={Array []}
-        rows={3}
-        total={9} />
-</div>,
-  "nodes": Array [
-    <div>
-      <h1>
-            Photo Album
-      </h1>
-      <Thumbnails
-            cols={3}
-            photos={Array []}
-            rows={3}
-            total={9} />
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance":  {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
-      "_context": Object {},
-      "_currentElement": <PhotoAlbum
-        cols={3}
-        rows={3} />,
-      "_debugID": 5,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": PhotoAlbum {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "cols": 3,
-          "rows": 3,
-        },
-        "refs": Object {},
-        "state": Object {
-          "cols": 3,
-          "photos": Array [],
-          "rows": 3,
-          "total": 9,
-        },
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 3,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div>
-          <h1>
-                    Photo Album
-          </h1>
-          <Thumbnails
-                    cols={3}
-                    photos={Array []}
-                    rows={3}
-                    total={9} />
-</div>,
-        "_debugID": 6,
-        "_renderedOutput": <div>
-          <h1>
-                    Photo Album
-          </h1>
-          <Thumbnails
-                    cols={3}
-                    photos={Array []}
-                    rows={3}
-                    total={9} />
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <PhotoAlbum
+<div>
+  <h1>
+    Photo Album
+  </h1>
+  <Thumbnails
     cols={3}
-    rows={3} />,
-}
+    photos={Array []}
+    rows={3}
+    total={9} />
+</div>
 `;
