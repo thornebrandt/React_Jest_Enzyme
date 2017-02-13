@@ -13,15 +13,10 @@ class Thumbnails extends React.Component{
 	}
 
 	render(){
-		// let thumbnails = this.props.photos.map((photo) => {
-		// 	return <Thumbnail key={photo.id} thumbnail={photo.thumbnailUrl} />
-		// });
 		let rows = [];
 		for(let i = 0; i < this.state.rows; i++){
-			rows.push(<ThumbnailRow key={i} cols={this.state.cols} />);
-			//rows.push(<div />);
+			rows.push(<ThumbnailRow key={i} rowIndex={i} cols={this.state.cols} />);
 		}
-
 		return (
 			<div>
 				{rows}

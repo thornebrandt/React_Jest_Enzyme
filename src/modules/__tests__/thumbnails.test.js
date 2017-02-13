@@ -1,5 +1,5 @@
 import React from 'react';
-import {mount} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import renderer from 'react-test-renderer';
 import Thumbnails from '../thumbnails';
 import ThumbnailRow from '../thumbnail-row';
@@ -15,7 +15,7 @@ describe('<Thumbnails />', () => {
 
 	beforeEach(() => {
 		numPhotos = cols * rows;
-		wrapper = mount(
+		wrapper = shallow(
 			<Thumbnails
 				rows={rows}
 				cols={cols}
@@ -30,7 +30,7 @@ describe('<Thumbnails />', () => {
 	  setTimeout(() => {
 	    try {
 	      fn();
-	      done();x
+	      done();
 	    } catch(e) {
 	      done.fail(e);
 	    }
@@ -41,10 +41,20 @@ describe('<Thumbnails />', () => {
 		expect(wrapper.find(ThumbnailRow)).toHaveLength(rows);
 	});
 
+	it('assigns the row index to the rows', () => {
+		let firstRow = wrapper.find(ThumbnailRow).first();
+		expect(firstRow.props().rowIndex).toBe(0);
+	});
+
+
 	it('state was populated with photos', (done) => {
 		afterPromises(done, () => {
 			expect(instance.state.photos.length).toEqual(numPhotos);
 		});
+	});
+
+	it('matches snapshot', () => {
+		expect(wrapper).toMatchSnapshot();
 	});
 
 });
