@@ -7,9 +7,9 @@ class ThumbnailRow extends React.Component{
 		this.state = {
 			rowIndex: props.rowIndex,
 			cols: props.cols,
+			photos: props.photos
 		}
 	}
-
 	render(){
 		let thumbnails = [];
 		for(let i = 0; i < this.state.cols; i++){
@@ -17,6 +17,7 @@ class ThumbnailRow extends React.Component{
 				key={i}
 				colIndex={i}
 				rowIndex={this.state.rowIndex}
+				photo={this.state.photos[i]}
 			/>);
 		}
 
@@ -26,6 +27,5 @@ class ThumbnailRow extends React.Component{
 			</div>
 		);
 	}
-
 }
 export default ThumbnailRow;

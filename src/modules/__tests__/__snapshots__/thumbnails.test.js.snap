@@ -1,6 +1,7 @@
 exports[`<Thumbnails /> matches snapshot 1`] = `
 <div>
   <ThumbnailRow
+    className="thumbnailRow"
     cols={3}
     photos={
       Array [
@@ -23,6 +24,7 @@ exports[`<Thumbnails /> matches snapshot 1`] = `
     }
     rowIndex={0} />
   <ThumbnailRow
+    className="thumbnailRow"
     cols={3}
     photos={
       Array [
@@ -45,6 +47,7 @@ exports[`<Thumbnails /> matches snapshot 1`] = `
     }
     rowIndex={1} />
   <ThumbnailRow
+    className="thumbnailRow"
     cols={3}
     photos={
       Array [

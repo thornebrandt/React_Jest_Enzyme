@@ -1,0 +1,34 @@
+exports[`<ThumbnailRow /> matches snaptshot 1`] = `
+<div>
+  <Thumbnail
+    colIndex={0}
+    photo={
+      Object {
+        "id": 0,
+        "thumbnailUrl": "thumbnail0",
+        "url": "fakePhoto0",
+      }
+    }
+    rowIndex={1} />
+  <Thumbnail
+    colIndex={1}
+    photo={
+      Object {
+        "id": 1,
+        "thumbnailUrl": "thumbnail1",
+        "url": "fakePhoto1",
+      }
+    }
+    rowIndex={1} />
+  <Thumbnail
+    colIndex={2}
+    photo={
+      Object {
+        "id": 2,
+        "thumbnailUrl": "thumbnail2",
+        "url": "fakePhoto2",
+      }
+    }
+    rowIndex={1} />
+</div>
+`;

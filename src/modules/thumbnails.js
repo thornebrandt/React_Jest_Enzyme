@@ -22,6 +22,7 @@ class Thumbnails extends React.Component{
 		let rows = [];
 		for(let i = 0; i < this.state.rows; i++){
 			rows.push(<ThumbnailRow
+				className='thumbnailRow'
 				key={i}
 				rowIndex={i}
 				cols={this.state.cols}
