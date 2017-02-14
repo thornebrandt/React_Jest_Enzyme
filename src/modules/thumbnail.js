@@ -1,12 +1,23 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
+import React from 'react';
 
-const Thumbnail = React.createClass({
+
+class Thumbnail extends React.Component{
+	constructor(props){
+		super(props);
+	}
+
+	onClick(){
+		console.log("onClick");
+	}
+
 	render(){
 		return(
-			<img src={this.props.thumbnail} />
+			<img
+				src={this.props.thumbnail}
+				onClick={this.onClick}
+			/>
 		);
 	}
-});
+};
 
-module.exports = Thumbnail;
+export default Thumbnail;
