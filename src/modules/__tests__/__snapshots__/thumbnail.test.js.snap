@@ -1,0 +1,27 @@
+exports[`<Thumbnail /> matches snapshot 1`] = `
+<Thumbnail
+  photo={
+    Object {
+      "id": 0,
+      "thumbnailUrl": "thumbnail0",
+      "url": "fakePhoto0",
+    }
+  }>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }>
+    <img
+      onClick={[Function]}
+      src="thumbnail0" />
+    <Portal
+      closeOnEsc={true}
+      closeOnOutsideClick={true}
+      onClose={[Function]}
+      onOpen={[Function]}
+      onUpdate={[Function]} />
+  </div>
+</Thumbnail>
+`;

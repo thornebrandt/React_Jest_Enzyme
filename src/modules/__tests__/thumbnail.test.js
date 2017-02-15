@@ -3,8 +3,8 @@ import { shallow, mount } from 'enzyme';
 import { spy } from 'sinon';
 import Portal from 'react-portal';
 import fakePhotos from '../__data__/photos.fake';
+import toJson from 'enzyme-to-json';
 import Thumbnail from '../thumbnail';
-
 
 
 describe('<Thumbnail />', () => {
@@ -32,6 +32,10 @@ describe('<Thumbnail />', () => {
 	it('opens a portal on click', () => {
 		wrapper.find('img').simulate('click');
 		expect(openPortalSpy.calledOnce).toBe(true);
+	});
+
+	it('matches snapshot', () => {
+		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
 });
