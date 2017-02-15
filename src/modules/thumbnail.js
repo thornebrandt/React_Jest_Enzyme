@@ -40,8 +40,8 @@ class Thumbnail extends React.Component{
 					closeOnEsc
 					closeOnOutsideClick
 				>
-					<div style={portalBGStyle} onClick={this.closePortal}>
-						<PhotoModal photo={this.props.photo} />
+					<div ref="portalBG" style={portalBGStyle} onClick={this.closePortal}>
+						<PhotoModal ref="photoModal" photo={this.props.photo} />
 					</div>
 				</Portal>
 			</div>
