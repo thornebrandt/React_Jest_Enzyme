@@ -4,15 +4,32 @@ class PhotoModal extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			description: "",
-			editClass: 'hidden'
+			description: '',
+			editClass: 'hidden',
+			displayClass: ''
 		}
 		this.onChangeDescription = this.onChangeDescription.bind(this);
+		this.editDescription = this.editDescription.bind(this);
+		this.saveDescription = this.saveDescription.bind(this);
 	}
 
 	onChangeDescription(e){
 		this.setState({
 			description: e.target.value
+		});
+	}
+
+	editDescription(e){
+		this.setState({
+			editClass: '',
+			displayClass: 'hidden'
+		});
+	}
+
+	saveDescription(e){
+		this.setState({
+			editClass: 'hidden',
+			displayClass: ''
 		});
 	}
 
@@ -33,12 +50,12 @@ class PhotoModal extends React.Component{
 		return(
 			<div style={portalStyle}>
 				<img ref="img" className={"hey"} src={this.props.photo.url} />
-				<p ref="showDescription">
+				<p ref="showDescription" className={this.state.displayClass}>
 					<span ref="description">
 						{this.state.description}
 					</span>
 					<br />
-					<a href="#">Edit Description</a>
+					<a onClick={this.editDescription} href="#">Edit Description</a>
 				</p>
 				<p ref="editDescription" className={this.state.editClass} >
 					<input
@@ -46,7 +63,7 @@ class PhotoModal extends React.Component{
 						ref="descriptionInput"
 					/>
 					<br />
-					<a ref="confirm" href="#">Save</a>
+					<a onClick={this.saveDescription} ref="confirm" href="#">Save</a>
 				</p>
 			</div>
 		);

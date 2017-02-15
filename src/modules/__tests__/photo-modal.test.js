@@ -45,6 +45,26 @@ describe("<PhotoModal />", () =>{
 		expect(wrapper.ref('editDescription').hasClass('hidden')).toBe(true);
 	});
 
+	it('toggles to edit display when edit is clicked', () => {
+		let display = wrapper.ref('showDescription');
+		let edit = wrapper.ref('editDescription');
+		expect(edit.hasClass('hidden')).toBe(true);
+		expect(display.hasClass('hidden')).toBe(false);
+		display.find('a').simulate('click');
+		expect(display.hasClass('hidden')).toBe(true);
+		expect(edit.hasClass('hidden')).toBe(false);
+	});
+
+	it('toggles to display when confirm is clicked', () => {
+		let display = wrapper.ref('showDescription');
+		let edit = wrapper.ref('editDescription');
+		display.find('a').simulate('click');
+		expect(display.hasClass('hidden')).toBe(true);
+		expect(edit.hasClass('hidden')).toBe(false);
+		wrapper.ref('confirm').simulate('click');
+		expect(display.hasClass('hidden')).toBe(false);
+		expect(edit.hasClass('hidden')).toBe(true);
+	});
 
 	it('accepts text into input', () => {
 		let input = wrapper.ref('editDescription');
