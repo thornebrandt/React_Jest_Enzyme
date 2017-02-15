@@ -6,12 +6,23 @@ class PhotoModal extends React.Component{
 		this.state = {
 			description: ""
 		}
-		console.log(props);
 	}
 
 	render(){
+		const portalStyle = {
+			position: "relative",
+			margin: "5% auto 0 auto",
+			width: "50%",
+			minWidth: "300px",
+			minHeight: "300px",
+			textAlign : "center",
+			background: "white",
+			display: "block"
+
+		}
+
 		return(
-			<div>
+			<div style={portalStyle}>
 				<img src={this.props.photo.url} />
 				<p>{this.state.description}</p>
 				<input ref="editDescription" />

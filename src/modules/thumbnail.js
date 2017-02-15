@@ -8,11 +8,11 @@ class Thumbnail extends React.Component{
 		this.state = {
 			thumbnail: props.photo.thumbnailUrl
 		}
-		this.onClick = this.onClick.bind(this);
+		this.onImgClick = this.onImgClick.bind(this);
 		this.closePortal = this.closePortal.bind(this);
 	}
 
-	onClick(){
+	onImgClick(){
 		this.refs.portal.openPortal();
 	}
 
@@ -32,28 +32,17 @@ class Thumbnail extends React.Component{
 			height: "100%",
 		}
 
-		const portalStyle = {
-			position: "relative",
-			margin: "10% auto 0 auto",
-			width: "50%",
-			minWidth: "300px",
-			minHeight: "300px",
-			textAlign : "center",
-			background: "white",
-			display: "block"
-
-		}
-
-
 		return(
 			<div style={{ display: "inline-block" }}>
-				<img onClick={this.onClick} src={this.state.thumbnail} />
+				<img onClick={this.onImgClick} src={this.state.thumbnail} />
 				<Portal
 					ref="portal"
 					closeOnEsc
 					closeOnOutsideClick
 				>
-					<PhotoModal photo={this.props.photo} />
+					<div style={portalBGStyle} onClick={this.closePortal}>
+						<PhotoModal photo={this.props.photo} />
+					</div>
 				</Portal>
 			</div>
 		);
