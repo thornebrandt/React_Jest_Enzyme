@@ -41,6 +41,11 @@ describe("<PhotoModal />", () =>{
 		expect(window.localStorage.getItem('testLocalStorage')).toBe('123');
 	});
 
+	it('hides the input on load', () => {
+		expect(wrapper.ref('editDescription').hasClass('hidden')).toBe(true);
+	});
+
+
 	it('accepts text into input', () => {
 		let input = wrapper.ref('editDescription');
 		input.node.value = 'abc';
@@ -48,7 +53,7 @@ describe("<PhotoModal />", () =>{
 	});
 
 	it('text input is reflected in display', () => {
-		let input = wrapper.ref('editDescription');
+		let input = wrapper.ref('descriptionInput');
 		let display = wrapper.ref('description');
 		input.simulate('change', { target: { value: 'abc' }});
 		expect(display.text()).toEqual('abc');

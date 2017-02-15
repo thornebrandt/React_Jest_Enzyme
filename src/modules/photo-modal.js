@@ -4,7 +4,8 @@ class PhotoModal extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			description: ""
+			description: "",
+			editClass: 'hidden'
 		}
 		this.onChangeDescription = this.onChangeDescription.bind(this);
 	}
@@ -27,12 +28,26 @@ class PhotoModal extends React.Component{
 			display: "block"
 
 		}
+
+
 		return(
 			<div style={portalStyle}>
-				<img src={this.props.photo.url} />
-				<p ref="description">{this.state.description}</p>
-				<input onChange={this.onChangeDescription} ref="editDescription" />
-				<a href="#">Edit Description</a>
+				<img ref="img" className={"hey"} src={this.props.photo.url} />
+				<p ref="showDescription">
+					<span ref="description">
+						{this.state.description}
+					</span>
+					<br />
+					<a href="#">Edit Description</a>
+				</p>
+				<p ref="editDescription" className={this.state.editClass} >
+					<input
+						onChange={this.onChangeDescription}
+						ref="descriptionInput"
+					/>
+					<br />
+					<a ref="confirm" href="#">Save</a>
+				</p>
 			</div>
 		);
 	}
