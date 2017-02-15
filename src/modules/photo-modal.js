@@ -4,13 +4,23 @@ class PhotoModal extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			description: '',
+			description: this.checkForStoredDescription(props.photo.id),
 			editClass: 'hidden',
 			displayClass: ''
 		}
 		this.onChangeDescription = this.onChangeDescription.bind(this);
 		this.editDescription = this.editDescription.bind(this);
 		this.saveDescription = this.saveDescription.bind(this);
+	}
+
+	checkForStoredDescription(id){
+		let description;
+		try{
+			description = window.localStorage.getItem('photo_' + id);
+		} catch(e){
+			console.log("no localStorage");
+		}
+		return description ? description : '';
 	}
 
 	onChangeDescription(e){
@@ -31,6 +41,7 @@ class PhotoModal extends React.Component{
 			editClass: 'hidden',
 			displayClass: ''
 		});
+		console.log('this.state', this.state);
 		window.localStorage.setItem('photo_' + this.props.photo.id, this.state.description);
 	}
 

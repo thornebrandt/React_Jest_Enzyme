@@ -37,6 +37,10 @@ describe("<PhotoModal />", () =>{
 		instance = wrapper.instance();
 	});
 
+	afterEach(() => {
+		window.localStorage.clear();
+	});
+
 	it('saves local storage', () => {
 		window.localStorage.setItem('testLocalStorage', '123');
 		expect(window.localStorage.getItem('testLocalStorage')).toBe('123');
@@ -70,7 +74,7 @@ describe("<PhotoModal />", () =>{
 	it('accepts text into input', () => {
 		let input = wrapper.ref('editDescription');
 		input.node.value = 'abc';
-		expect(input.node.value).toEqual('abc');
+		expect(input.node.value).toBe('abc');
 	});
 
 	it('text input is reflected in display', () => {
@@ -90,6 +94,15 @@ describe("<PhotoModal />", () =>{
 		expect(window.localStorage.getItem(photo_ref)).toBe(changedValue);
 	});
 
-
+	it('displays description from localStorage', () => {
+		let changedValue = "This value was pulled from localStorage";
+		let photo_ref = "photo_" + photo.id;
+		expect(window.localStorage.getItem(photo_ref)).toBe(undefined);
+		expect(wrapper.ref('description').text()).toBe('');
+		window.localStorage.setItem(photo_ref, changedValue);
+		wrapper.unmount();
+		wrapper.mount();
+		expect(wrapper.ref('description').text()).toBe(changedValue);
+	});
 
 });
