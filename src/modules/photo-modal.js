@@ -6,6 +6,13 @@ class PhotoModal extends React.Component{
 		this.state = {
 			description: ""
 		}
+		this.onChangeDescription = this.onChangeDescription.bind(this);
+	}
+
+	onChangeDescription(e){
+		this.setState({
+			description: e.target.value
+		});
 	}
 
 	render(){
@@ -20,12 +27,11 @@ class PhotoModal extends React.Component{
 			display: "block"
 
 		}
-
 		return(
 			<div style={portalStyle}>
 				<img src={this.props.photo.url} />
-				<p>{this.state.description}</p>
-				<input ref="editDescription" />
+				<p ref="description">{this.state.description}</p>
+				<input onChange={this.onChangeDescription} ref="editDescription" />
 				<a href="#">Edit Description</a>
 			</div>
 		);

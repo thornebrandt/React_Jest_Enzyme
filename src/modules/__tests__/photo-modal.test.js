@@ -32,13 +32,26 @@ describe("<PhotoModal />", () =>{
 	});
 
 	beforeEach(() => {
-		wrapper = shallow(<PhotoModal photo={fakePhotos[0]} />);
+		wrapper = mount(<PhotoModal photo={fakePhotos[0]} />);
 		instance = wrapper.instance();
 	});
 
 	it('saves local storage', () => {
 		window.localStorage.setItem('testLocalStorage', '123');
 		expect(window.localStorage.getItem('testLocalStorage')).toBe('123');
+	});
+
+	it('accepts text into input', () => {
+		let input = wrapper.ref('editDescription');
+		input.node.value = 'abc';
+		expect(input.node.value).toEqual('abc');
+	});
+
+	it('text input is reflected in display', () => {
+		let input = wrapper.ref('editDescription');
+		let display = wrapper.ref('description');
+		input.simulate('change', { target: { value: 'abc' }});
+		expect(display.text()).toEqual('abc');
 	});
 
 });
