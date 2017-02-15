@@ -6,6 +6,7 @@ import fakePhotos from '../__data__/photos.fake';
 
 describe("<PhotoModal />", () =>{
 	let wrapper, instance;
+	let photo = fakePhotos[0];
 
 	beforeAll(() => {
 		class MockLocalStorage {
@@ -32,7 +33,7 @@ describe("<PhotoModal />", () =>{
 	});
 
 	beforeEach(() => {
-		wrapper = mount(<PhotoModal photo={fakePhotos[0]} />);
+		wrapper = mount(<PhotoModal photo={photo} />);
 		instance = wrapper.instance();
 	});
 
@@ -78,5 +79,17 @@ describe("<PhotoModal />", () =>{
 		input.simulate('change', { target: { value: 'abc' }});
 		expect(display.text()).toEqual('abc');
 	});
+
+	it('saves description to localstorage', () => {
+		let changedValue = "I will change localStorage";
+		let input = wrapper.ref('descriptionInput');
+		let confirmButton = wrapper.ref('confirm');
+		let photo_ref = "photo_" + photo.id;
+		input.simulate('change', { target: { value: changedValue }});
+		confirmButton.simulate('click');
+		expect(window.localStorage.getItem(photo_ref)).toBe(changedValue);
+	});
+
+
 
 });

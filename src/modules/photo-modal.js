@@ -31,6 +31,7 @@ class PhotoModal extends React.Component{
 			editClass: 'hidden',
 			displayClass: ''
 		});
+		window.localStorage.setItem('photo_' + this.props.photo.id, this.state.description);
 	}
 
 	render(){
