@@ -12,10 +12,22 @@ class PageNotFound extends React.Component {
 		);
 	}
 }
+
+class PhotoAlbumWrapper extends React.Component{
+	render() {
+		return (
+			<PhotoAlbum
+				rows={3}
+				cols={3}
+			/>
+		);
+	}
+}
+
 render(
 	(
 		<Router history={browserHistory}>
-			<Route path="/photos" component={PhotoAlbum} />
+			<Route path="/photos" component={PhotoAlbumWrapper} />
 			<Redirect from="/" to="/photos" />
 			<Route path="*" component={PageNotFound} />
 		</Router>

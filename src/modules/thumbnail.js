@@ -1,21 +1,34 @@
 import React from 'react';
-
+import Portal from 'react-portal';
 
 class Thumbnail extends React.Component{
 	constructor(props){
 		super(props);
+		this.state = {
+			thumbnail: props.photo.thumbnailUrl
+		}
+		this.onClick = this.onClick.bind(this);
 	}
 
 	onClick(){
-		console.log("onClick");
+		this.refs.portal.openPortal();
 	}
 
 	render(){
+		const inline = {
+			display: "inline-block"
+		}
+
+
 		return(
-			<img
-				src={this.props.thumbnail}
-				onClick={this.onClick}
-			/>
+			<div style={inline}>
+				<img onClick={this.onClick} src={this.state.thumbnail} />
+				<Portal ref="portal" >
+					<div>
+						howdy
+					</div>
+				</Portal>
+			</div>
 		);
 	}
 };

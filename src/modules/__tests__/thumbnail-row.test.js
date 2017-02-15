@@ -11,11 +11,12 @@ describe("<ThumbnailRow />", () => {
 	let rowIndex = 1;
 
 	beforeEach(() => {
+		const photosSubSet = fakePhotos.slice(0, cols);
 		wrapper = shallow(
 			<ThumbnailRow
 				rowIndex={rowIndex}
 				cols={cols}
-				photos={fakePhotos}
+				photos={photosSubSet}
 			/>
 		);
 		instance = wrapper.instance();
@@ -31,7 +32,7 @@ describe("<ThumbnailRow />", () => {
 	});
 
 	it('state was populated with row index', () => {
-		expect(instance.state.rowIndex).toEqual(rowIndex);
+		expect(instance.props.rowIndex).toEqual(rowIndex);
 	});
 
 	it('assigns the thumbnails the correct photo', () => {

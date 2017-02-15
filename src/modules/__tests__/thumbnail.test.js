@@ -1,25 +1,37 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { spy } from 'sinon';
+import Portal from 'react-portal';
+import fakePhotos from '../__data__/photos.fake';
 import Thumbnail from '../thumbnail';
-import Portal from 'react-portal'
+
+
 
 describe('<Thumbnail />', () => {
 	let wrapper, instance;
-	let onClickSpy;
+	let onClickSpy, openPortalSpy;
+
 
 	beforeEach(() => {
 		onClickSpy = spy(Thumbnail.prototype, 'onClick');
-		wrapper = shallow(<Thumbnail />);
+		openPortalSpy = spy(Portal.prototype, 'openPortal');
+		wrapper = mount(<Thumbnail photo={fakePhotos[0]} />);
 		instance = wrapper.instance();
 	});
 
 	afterEach(() => {
 		Thumbnail.prototype.onClick.restore();
+		Portal.prototype.openPortal.restore();
 	});
 
 	it('responds to a click', () => {
-		wrapper.simulate('click');
+		wrapper.find('img').simulate('click');
 		expect(onClickSpy.calledOnce).toBe(true);
 	});
+
+	it('opens a portal on click', () => {
+		wrapper.find('img').simulate('click');
+		expect(openPortalSpy.calledOnce).toBe(true);
+	});
+
 });

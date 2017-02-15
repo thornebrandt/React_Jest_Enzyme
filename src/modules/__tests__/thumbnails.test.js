@@ -57,7 +57,7 @@ describe('<Thumbnails />', () => {
 	});
 
 	it('state was populated with photos', () => {
-		expect(instance.state.photos.length).toEqual(numPhotos);
+		expect(instance.props.photos.length).toEqual(numPhotos);
 	});
 
 	it('matches snapshot', () => {
