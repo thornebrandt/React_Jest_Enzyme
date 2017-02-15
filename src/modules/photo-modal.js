@@ -11,6 +11,7 @@ class PhotoModal extends React.Component{
 		this.onChangeDescription = this.onChangeDescription.bind(this);
 		this.editDescription = this.editDescription.bind(this);
 		this.saveDescription = this.saveDescription.bind(this);
+		this.cancelDescription = this.cancelDescription.bind(this);
 	}
 
 	checkForStoredDescription(id){
@@ -44,6 +45,14 @@ class PhotoModal extends React.Component{
 		window.localStorage.setItem('photo_' + this.props.photo.id, this.state.description);
 	}
 
+	cancelDescription(e){
+		this.setState({
+			description: this.checkForStoredDescription(this.props.photo.id),
+			editClass: 'hidden',
+			displayClass: ''
+		});
+	}
+
 	render(){
 		const portalStyle = {
 			position: "relative",
@@ -66,7 +75,7 @@ class PhotoModal extends React.Component{
 						{this.state.description}
 					</span>
 					<br />
-					<a onClick={this.editDescription} href="#">Edit Description</a>
+					<a onClick={this.editDescription} ref="editBtn" href="#">Edit Description</a>
 				</p>
 				<p ref="editDescription" className={this.state.editClass} >
 					<input
@@ -75,6 +84,7 @@ class PhotoModal extends React.Component{
 					/>
 					<br />
 					<a onClick={this.saveDescription} ref="confirm" href="#">Save</a>
+					<a onClick={this.cancelDescription} ref="cancel" href="#">Cancel</a>
 				</p>
 			</div>
 		);

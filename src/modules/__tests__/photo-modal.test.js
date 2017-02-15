@@ -114,4 +114,29 @@ describe("<PhotoModal />", () =>{
 		expect(wrapper.ref('description').text()).toBe("");
 	});
 
+	it('toggles the display when cancel is clicked', () => {
+		let display = wrapper.ref('showDescription');
+		let edit = wrapper.ref('editDescription');
+		display.find('a').simulate('click');
+		expect(display.hasClass('hidden')).toBe(true);
+		expect(edit.hasClass('hidden')).toBe(false);
+		wrapper.ref('cancel').simulate('click');
+		expect(display.hasClass('hidden')).toBe(false);
+		expect(edit.hasClass('hidden')).toBe(true);
+	});
+
+	it('returns to localStorage if cancelled', () => {
+		let oldValue = "oldValue";
+		let newValue = "newValue";
+		let photo_ref = "photo_" + photo.id;
+		let input = wrapper.ref('descriptionInput');
+		let cancelButton = wrapper.ref('cancel');
+		window.localStorage.setItem(photo_ref, oldValue);
+		input.simulate('change', { target: { value: newValue }});
+		expect(wrapper.ref('description').text()).toBe(newValue);
+		cancelButton.simulate('click');
+		expect(wrapper.ref('description').text()).toBe(oldValue);
+	});
+
+
 });
