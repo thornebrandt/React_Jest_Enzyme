@@ -150,9 +150,18 @@ describe("<PhotoModal />", () =>{
 		expect(input.node.value).toBe('');
 	});
 
-
-
-
-
+	it('submits the new description on enter', () => {
+		let newValue = 'newValue';
+		let photo_ref = "photo_" + photo.id;
+		let input = wrapper.ref('descriptionInput');
+		let display = wrapper.ref('showDescription');
+		let edit = wrapper.ref('editDescription');
+		display.find('a').simulate('click');
+		input.simulate('change', { target: { value: newValue }});
+		wrapper.find('input').simulate('keyPress', {key: 'Enter'})
+		expect(display.hasClass('hidden')).toBe(false);
+		expect(edit.hasClass('hidden')).toBe(true);
+		expect(window.localStorage.getItem(photo_ref)).toBe(newValue);
+	});
 
 });

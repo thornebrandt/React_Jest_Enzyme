@@ -9,11 +9,9 @@ input{
 
 }
 
-
 .hidden{
 	display: none;
 }
-
 
 .container{
 	margin-left: auto;
@@ -35,7 +33,7 @@ input{
 }
 
 .thumbnail img{
-	border-radius: 50%;
+	border-radius: 30%;
 }
 
 .portalBG{
@@ -83,4 +81,13 @@ input{
 	.portal img{
 		width: 300px;
 	}
+
+	.thumbnail, .thumbnailRow{
+		height: 75px;
+	}
+
+	.thumbnail img{
+		width: 75px;
+	}
+
 }

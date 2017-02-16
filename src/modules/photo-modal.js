@@ -12,6 +12,7 @@ class PhotoModal extends React.Component{
 		this.editDescription = this.editDescription.bind(this);
 		this.saveDescription = this.saveDescription.bind(this);
 		this.cancelDescription = this.cancelDescription.bind(this);
+		this.handleKeyPress = this.handleKeyPress.bind(this);
 	}
 
 	checkForStoredDescription(id){
@@ -58,6 +59,16 @@ class PhotoModal extends React.Component{
 		this.refs.descriptionInput.value = "";
 	}
 
+	handleKeyPress(e){
+		if(e.key === 'Enter'){
+			this.setState({
+				editClass: 'hidden',
+				displayClass: ''
+			});
+			window.localStorage.setItem('photo_' + this.props.photo.id, this.state.description);
+		}
+	}
+
 	render(){
 		return(
 			<div className="portal">
@@ -79,6 +90,7 @@ class PhotoModal extends React.Component{
 				<p ref="editDescription" className={this.state.editClass} >
 					<input
 						onChange={this.onChangeDescription}
+						onKeyPress={this.handleKeyPress}
 						ref="descriptionInput"
 						value={this.state.description}
 						placeholder="Add Photo Description"
