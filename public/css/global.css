@@ -1,3 +1,86 @@
+body{
+	font-family: Arial, Helvetica, Sans-Serif;
+}
+
+input{
+	width: 90%;
+	border-radius: 3px;
+	margin: 5px;
+
+}
+
+
 .hidden{
 	display: none;
+}
+
+
+.container{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.thumbnailRow{
+	margin: 0px;
+	padding: 0px;
+	height: 150px;
+}
+
+.thumbnail{
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	height: 150px;
+}
+
+.thumbnail img{
+	border-radius: 50%;
+}
+
+.portalBG{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100%;
+}
+
+.portal{
+	position: relative;
+	margin: 5% auto 0 auto;
+	width: 40%;
+	text-align: center;
+	background: white;
+	display: block;
+	border-radius: 15px;
+	padding: 15px;
+}
+
+.portal img{
+	width: 100%;
+}
+
+.button{
+	display: inline-block;
+	text-decoration: none;
+	background: white;
+	color: black;
+	border: gray solid 1px;
+	padding: 5px 10px 5px 10px;
+	border-radius: 3px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+@media (max-width: 800px) {
+	.portal{
+		width: 300px;
+	}
+
+	.portal img{
+		width: 300px;
+	}
 }

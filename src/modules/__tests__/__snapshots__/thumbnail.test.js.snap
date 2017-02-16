@@ -8,11 +8,7 @@ exports[`<Thumbnail /> matches snapshot 1`] = `
     }
   }>
   <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }>
+    className="thumbnail">
     <img
       onClick={[Function]}
       src="thumbnail0" />

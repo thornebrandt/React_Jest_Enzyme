@@ -23,24 +23,15 @@ class Thumbnail extends React.Component{
 	}
 
 	render(){
-		const portalBGStyle = {
-			position: "absolute",
-			top: "0px",
-			left: "0px",
-			background: "rgba(0, 0, 0, 0.5)",
-			width: "100%",
-			height: "100%",
-		}
-
 		return(
-			<div style={{ display: "inline-block" }}>
+			<div className="thumbnail">
 				<img onClick={this.onImgClick} src={this.state.thumbnail} />
 				<Portal
 					ref="portal"
 					closeOnEsc
 					closeOnOutsideClick
 				>
-					<div ref="portalBG" style={portalBGStyle} onClick={this.closePortal}>
+					<div ref="portalBG" className="portalBG" onClick={this.closePortal}>
 						<PhotoModal ref="photoModal" photo={this.props.photo} />
 					</div>
 				</Portal>

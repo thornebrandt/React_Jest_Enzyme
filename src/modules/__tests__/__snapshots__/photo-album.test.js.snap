@@ -1,5 +1,6 @@
 exports[`<PhotoAlbum /> matches snapshot 1`] = `
-<div>
+<div
+  className="container">
   <h1>
     Photo Album
   </h1>

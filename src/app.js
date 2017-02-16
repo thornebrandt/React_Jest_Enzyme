@@ -17,8 +17,8 @@ class PhotoAlbumWrapper extends React.Component{
 	render() {
 		return (
 			<PhotoAlbum
-				rows={3}
-				cols={3}
+				rows={5}
+				cols={5}
 			/>
 		);
 	}

@@ -25,12 +25,14 @@ class PhotoModal extends React.Component{
 	}
 
 	onChangeDescription(e){
+		e.preventDefault();
 		this.setState({
 			description: e.target.value
 		});
 	}
 
 	editDescription(e){
+		e.preventDefault();
 		this.setState({
 			editClass: '',
 			displayClass: 'hidden'
@@ -38,6 +40,7 @@ class PhotoModal extends React.Component{
 	}
 
 	saveDescription(e){
+		e.preventDefault();
 		this.setState({
 			editClass: 'hidden',
 			displayClass: ''
@@ -46,45 +49,57 @@ class PhotoModal extends React.Component{
 	}
 
 	cancelDescription(e){
+		e.preventDefault();
 		this.setState({
 			description: this.checkForStoredDescription(this.props.photo.id),
 			editClass: 'hidden',
 			displayClass: ''
 		});
+		this.refs.descriptionInput.value = "";
 	}
 
 	render(){
-		const portalStyle = {
-			position: "relative",
-			margin: "5% auto 0 auto",
-			width: "50%",
-			minWidth: "300px",
-			minHeight: "300px",
-			textAlign : "center",
-			background: "white",
-			display: "block"
-
-		}
-
-
 		return(
-			<div style={portalStyle}>
-				<img ref="img" className={"hey"} src={this.props.photo.url} />
+			<div className="portal">
+				<img ref="img" src={this.props.photo.url} />
 				<p ref="showDescription" className={this.state.displayClass}>
 					<span ref="description">
 						{this.state.description}
 					</span>
 					<br />
-					<a onClick={this.editDescription} ref="editBtn" href="#">Edit Description</a>
+					<a
+						className="button"
+						onClick={this.editDescription}
+						ref="editBtn"
+						href="#"
+					>
+						Edit Description
+					</a>
 				</p>
 				<p ref="editDescription" className={this.state.editClass} >
 					<input
 						onChange={this.onChangeDescription}
 						ref="descriptionInput"
+						value={this.state.description}
+						placeholder="Add Photo Description"
 					/>
 					<br />
-					<a onClick={this.saveDescription} ref="confirm" href="#">Save</a>
-					<a onClick={this.cancelDescription} ref="cancel" href="#">Cancel</a>
+					<a
+						className="button"
+						onClick={this.saveDescription}
+						ref="confirm"
+						href="#"
+					>
+						Save
+					</a>
+					<a
+						className="button"
+						onClick={this.cancelDescription}
+						ref="cancel"
+						href="#"
+					>
+						Cancel
+					</a>
 				</p>
 			</div>
 		);

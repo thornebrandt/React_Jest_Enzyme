@@ -17,7 +17,7 @@ class ThumbnailRow extends React.Component{
 		}
 
 		return (
-			<div>
+			<div className="thumbnailRow">
 				{thumbnails}
 			</div>
 		);

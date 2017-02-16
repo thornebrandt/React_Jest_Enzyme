@@ -123,6 +123,7 @@ describe("<PhotoModal />", () =>{
 		wrapper.ref('cancel').simulate('click');
 		expect(display.hasClass('hidden')).toBe(false);
 		expect(edit.hasClass('hidden')).toBe(true);
+
 	});
 
 	it('returns to localStorage if cancelled', () => {
@@ -137,6 +138,21 @@ describe("<PhotoModal />", () =>{
 		cancelButton.simulate('click');
 		expect(wrapper.ref('description').text()).toBe(oldValue);
 	});
+
+	it('empties the input when cancelled', () => {
+		let newValue = "newValue";
+		let input = wrapper.ref('descriptionInput');
+		let cancelButton = wrapper.ref('cancel');
+		input.simulate('change', { target: { value: newValue }});
+		input.node.value = newValue;
+		expect(input.node.value).toBe(newValue);
+		cancelButton.simulate('click');
+		expect(input.node.value).toBe('');
+	});
+
+
+
+
 
 
 });

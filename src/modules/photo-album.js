@@ -39,7 +39,7 @@ class PhotoAlbum extends React.Component{
 
 	render(){
 		return (
-			<div>
+			<div className="container">
 				<h1>Photo Album</h1>
 				<Thumbnails
 					photos={this.state.photos}

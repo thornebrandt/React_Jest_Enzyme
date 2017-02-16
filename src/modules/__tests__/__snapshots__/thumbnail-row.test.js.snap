@@ -1,5 +1,6 @@
 exports[`<ThumbnailRow /> matches snaptshot 1`] = `
-<div>
+<div
+  className="thumbnailRow">
   <Thumbnail
     colIndex={0}
     photo={
