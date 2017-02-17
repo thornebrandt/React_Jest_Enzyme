@@ -13,6 +13,7 @@ exports[`<Thumbnail /> matches snapshot 1`] = `
       onClick={[Function]}
       src="thumbnail0" />
     <Portal
+      beforeClose={[Function]}
       closeOnEsc={true}
       closeOnOutsideClick={true}
       onClose={[Function]}
